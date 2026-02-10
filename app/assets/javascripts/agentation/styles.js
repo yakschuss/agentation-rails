@@ -386,10 +386,11 @@ var AgentationStyles = (function() {
     .ag-selection-rect {
       position: fixed;
       border: 2px dashed var(--ag-accent);
-      background: rgba(59, 130, 246, 0.05);
+      background: var(--ag-overlay-bg);
       z-index: 2147483646;
       pointer-events: none;
       display: none;
+      border-radius: 4px;
     }
 
     .ag-selection-rect.ag-visible {

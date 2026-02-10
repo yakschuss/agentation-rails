@@ -156,6 +156,7 @@ var AgentationPopup = (function() {
     // Click outside handler
     AgentationFreeze.originalSetTimeout(function() {
       document.addEventListener("mousedown", handleOutsideClick);
+      document.addEventListener("keydown", handleGlobalKeydown, true);
     }, 100);
   }
 
@@ -200,8 +201,17 @@ var AgentationPopup = (function() {
     }
   }
 
+  function handleGlobalKeydown(e) {
+    if (e.key === "Escape" && popupEl) {
+      e.preventDefault();
+      e.stopPropagation();
+      hidePopup();
+    }
+  }
+
   function hidePopup() {
     document.removeEventListener("mousedown", handleOutsideClick);
+    document.removeEventListener("keydown", handleGlobalKeydown, true);
     if (popupEl) {
       popupEl.style.animation = "ag-popup-exit 0.15s ease forwards";
       var el = popupEl;

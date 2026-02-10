@@ -62,6 +62,15 @@ var AgentationAnnotator = (function() {
     if (!active) return;
     if (isAgentationUI(e.target)) return;
 
+    // Detect drag start (mouse moved past threshold with a modifier held)
+    if (dragStart && dragMode && !isDragging) {
+      var dx = e.clientX - dragStart.x;
+      var dy = e.clientY - dragStart.y;
+      if (Math.sqrt(dx * dx + dy * dy) > 5) {
+        isDragging = true;
+      }
+    }
+
     if (isDragging && dragStart) {
       // Draw selection rectangle
       AgentationOverlay.showSelectionRect(dragStart.x, dragStart.y, e.clientX, e.clientY);
@@ -69,7 +78,7 @@ var AgentationAnnotator = (function() {
       return;
     }
 
-    // Hover overlay
+    // Hover overlay (only when not dragging)
     var element = getTargetElement(e);
     if (element) {
       AgentationOverlay.showHoverOverlay(element);
