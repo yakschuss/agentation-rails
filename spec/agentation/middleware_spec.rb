@@ -13,7 +13,8 @@ RSpec.describe Agentation::Middleware do
       response_body = body.first
 
       expect(status).to eq(200)
-      expect(response_body).to include('<script data-agentation="true">')
+      expect(response_body).to include('data-agentation="true"')
+      expect(response_body).to include('data-agentation-detail="standard"')
       expect(response_body).to include("</script>\n</body>")
     end
 
