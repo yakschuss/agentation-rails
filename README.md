@@ -137,6 +137,10 @@ The JavaScript modules live in `app/assets/javascripts/agentation/`:
 | `settings.js` | Settings panel UI |
 | `toolbar.js` | Main orchestrator |
 
+## Credits
+
+This is a Rails/Rack port of [agentation](https://github.com/benjitaylor/agentation) by [Benji Taylor](https://github.com/benjitaylor). The original is a React component with an MCP server for real-time agent communication. This gem reimplements the annotation UI as framework-agnostic vanilla JS injected via Rack middleware, and adds Rails-specific context detection (Stimulus, Turbo, ViewComponent, partials).
+
 ## License
 
-MIT
+[PolyForm Shield License 1.0.0](https://polyformproject.org/licenses/shield/1.0.0) — same as the original agentation project. You can use, modify, and distribute freely, but you may not use it to build a competing product.

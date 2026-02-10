@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.summary       = "Visual feedback tool for AI coding agents"
   spec.description   = "Rack middleware that injects a visual annotation toolbar for capturing element selectors, styles, and context to share with AI agents."
   spec.homepage      = "https://github.com/jschuss/agentation-rails"
-  spec.license       = "MIT"
+  spec.license       = "PolyForm-Shield-1.0.0"
   spec.required_ruby_version = ">= 3.1"
 
   spec.files = Dir["lib/**/*", "app/**/*", "LICENSE"]
